@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 
 public class GameFragment extends Fragment {
     private final String GAME_STATE = "gameState";
-    private com.zybooks.lightsoutnav.LightsOutGame mGame;
+    private com.zybooks.lightsout2.LightsOutGame mGame;
     private GridLayout mLightGrid;
     private int mLightOnColor;
     private int mLightOffColor;
@@ -42,7 +42,7 @@ public class GameFragment extends Fragment {
         mLightOnColor = ContextCompat.getColor(this.requireActivity(), onColorId);
         mLightOffColor = ContextCompat.getColor(this.requireActivity(), R.color.black);
 
-        mGame = new com.zybooks.lightsoutnav.LightsOutGame();
+        mGame = new com.zybooks.lightsout2.LightsOutGame();
 
         if (savedInstanceState == null) {
             startGame();
@@ -71,8 +71,8 @@ public class GameFragment extends Fragment {
 
         // Find the button's row and col
         int buttonIndex = mLightGrid.indexOfChild(view);
-        int row = buttonIndex / com.zybooks.lightsoutnav.LightsOutGame.GRID_SIZE;
-        int col = buttonIndex % com.zybooks.lightsoutnav.LightsOutGame.GRID_SIZE;
+        int row = buttonIndex / com.zybooks.lightsout2.LightsOutGame.GRID_SIZE;
+        int col = buttonIndex % com.zybooks.lightsout2.LightsOutGame.GRID_SIZE;
 
         mGame.selectLight(row, col);
         setButtonColors();
@@ -89,8 +89,8 @@ public class GameFragment extends Fragment {
             Button gridButton = (Button) mLightGrid.getChildAt(buttonIndex);
 
             // Find the button's row and col
-            int row = buttonIndex / com.zybooks.lightsoutnav.LightsOutGame.GRID_SIZE;
-            int col = buttonIndex % com.zybooks.lightsoutnav.LightsOutGame.GRID_SIZE;
+            int row = buttonIndex /com.zybooks.lightsout2.LightsOutGame.GRID_SIZE;
+            int col = buttonIndex % com.zybooks.lightsout2.LightsOutGame.GRID_SIZE;
 
             if (mGame.isLightOn(row, col)) {
                 gridButton.setBackgroundColor(mLightOnColor);

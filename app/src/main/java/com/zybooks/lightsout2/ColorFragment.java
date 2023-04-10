@@ -1,4 +1,4 @@
-package com.zybooks.lightsoutnav;
+package com.zybooks.lightsout2;
 
 import android.content.Context;
 import android.content.SharedPreferences;

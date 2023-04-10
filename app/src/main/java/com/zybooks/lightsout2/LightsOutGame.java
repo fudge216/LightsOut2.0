@@ -1,4 +1,4 @@
-package com.zybooks.lightsoutnav;
+package com.zybooks.lightsout2;
 
 import java.util.Random;
 
